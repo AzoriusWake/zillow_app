@@ -1,0 +1,2 @@
+module PillowsHelper
+end

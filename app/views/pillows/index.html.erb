@@ -1,0 +1,30 @@
+<div id="full-view">
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-3" style="text-align: center">
+      <div ng-controller="StateApp" class="state-profile profile col-sm-5 container-fluid well">
+        <h3>State: {{state.name}} </h3>
+        <h5>Total Counties: {{state.count}}</h5>
+        <table>
+          <tr>
+            <th>County</th>
+            <th>Average Price</th>
+          </tr>
+          <tr ng-repeat="county in state.counties | orderBy:'-price' | limitTo:10">
+            <td style="text-align: left; width: 125px">{{county.name}}</td>
+            <td style="float: right">{{county.price | currency:"$ ":0}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-6">
+      <div id="zillow_map"></div>
+      <script ng-controller="AvgPriceApp">
+      </script>
+    </div>
+    <div class="col-md-1"></div>
+  </end>
+</div>
+<div style="text-align: center">*Zillow API does not provide pricing information for all counties. What is shown is what is available from Zillow's API.*</div>
+<br>

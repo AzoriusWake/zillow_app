@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Zillow</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= nav_bar fixed: :top, brand: "USA Home Pricing", responsive: true do %>
+  <%= menu_group pull: :right do %>
+    <%= menu_item "Average", root_path %>
+    <%= menu_item "High", root_path %>
+    <%= menu_item "Low", root_path %>
+  <% end %>
+<% end %>
+
+<div ng-app="myApp">
+<%= yield %>
+</div>
+
+</body>
+</html>
